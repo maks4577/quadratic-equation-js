@@ -1,35 +1,28 @@
-const a = parseFloat(prompt('Enter A'));
-const b = parseFloat(prompt('Enter B'));
-const c = parseFloat(prompt('Enter C'));
-
-const solution = quadraticEquation(a, b, c);
-document.write(solution);
-
-function discr(a, b, c) {
-    return "d = (b * b) - (4 * a * c)";
+function print(value){
+    document.write(value);
+    document.write("<br>");
 }
+const a = parseFloat(prompt("Enter a") );
+const b = parseFloat(prompt("Enter b") );
+const c = parseFloat(prompt("Enter c") );
 
-function solveQuadr(a, b, c) {
-    const d = discr(a, b, c);
-    let x1, x2;
+const solution = solveQuader(a, b, c);
+print(solution);
 
-    if(d < 0){
-         document.write("Рівняння немає коренів");
-        }else
-        if(d == 0)
-          {
-            x1 = (-b) / (2 * a);
-             return "x = " + x1;
-           }
-           else
-           {
-              x1 = (-b + Math.sqrt(d)) / (2 * a);
-              x2 = (-b - Math.sqrt(d)) / (2 * a);
-               if (x1 == x2)
-                return "x1 = x2 " + x1;
-                 else
-                  return "x1 = " + x1 + ", x2= " + x2;
-            }
-        
+function solveQuader(a, b, c){
+   const d = discr();
+   function discr(a, b, c){
+    return Math.pow(b, 2) - 4 * (a * c);
     }
-    
+    let x1, x2;
+   
+    if(d === 0){
+        return x1, x2 = -b / (2 * a);
+    }else if(d > 0){
+        return x1 = ( Math.pow(b, 2) + Math.sqrt(d) ) / (2 * a); 
+        return x2 = ( Math.pow(b, 2) - Math.sqrt(d) ) / (2 * a);
+    }else{
+        return x1, x2 = "No answer";
+    }
+    return "x1= " + x1 + ", x2 = " + x2;
+}
