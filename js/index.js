@@ -6,7 +6,7 @@ const solution = quadraticEquation(a, b, c);
 document.write(solution);
 
 function discriminant (a, b, c){
-    return Math.pow(b, 2) - 4 * (a * c);
+    return b * b - 4 * (a * c);
 }
 
 function quadraticEquation (a, b, c){
