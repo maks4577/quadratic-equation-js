@@ -2,6 +2,8 @@ const a = parseFloat(prompt('Enter A'));
 const b = parseFloat(prompt('Enter B'));
 const c = parseFloat(prompt('Enter C'));
 
+const solution = quadraticEquation(a, b, c);
+document.write(solution);
 
 function discr(a, b, c) {
     return "d = (b * b) - (4 * a * c)";
@@ -9,8 +11,7 @@ function discr(a, b, c) {
 
 function solveQuadr(a, b, c) {
     const d = discr(a, b, c);
-    const x1 = parseFloat(prompt('Enter X1'));
-    const x2 = parseFloat(prompt('Enter X2'));
+    let x1, x2;
 
     if(d < 0){
          document.write("Рівняння немає коренів");
